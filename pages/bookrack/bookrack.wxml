@@ -1,0 +1,41 @@
+<view class='bookrack'>
+  <view class='user_info' data-name="{{name}}" data-openId="{{openid}}">
+    <view class='user_img'>
+      <image src='{{userInfo.avatarUrl}}'></image>
+    </view>
+    <view class='user_name'>
+      <view>{{userInfo.nickName}}</view>
+      <view bindtap='go_chong'>余额：{{balance}}铜钱</view>
+    </view>
+  </view>
+  <view class='user_book'>
+    <view class='book_box' wx:for="{{book_r}}" data-bookId="{{item.b_id}}" bindtap='tiao_m'>
+      <view class='box_left'>
+        <image src='{{item.book_ing_url}}'></image>
+      </view>
+      <view class='box_right'>
+        <view class='right_top'>{{item.book_name}}</view>
+        <view class='right_bottom'>{{item.book_author}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class='hot_foot'>
+  <view class='foot_left' bindtap='tiao_fen'>
+    <view class='left_img'>
+      <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_bookshelf_2x$2fa42e84.png'></image>
+    </view>
+    <view>分类列表</view>
+  </view>
+
+
+  <navigator url="/pages/chongzhi/chongzhi" hover-class="navigator-hover">
+    <view class='foot_right'>
+      <view class='left_img'>
+        <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_store_2x$844cb7e2.png'></image>
+      </view>
+      <view>充值</view>
+    </view>
+  </navigator>
+
+</view> -->

@@ -1,0 +1,35 @@
+<view class='dt_list'>
+    <view class='dir_num'>本书共{{dir_num}}章</view>
+    <view class='list_c'>
+      <view class='list_text' wx:for='{{dir_list}}' data-id='{{item.sr_id}}'>
+        <navigator class='list-bor' url="/pages/Novel_c/Novel_c?chapterId={{item.sr_id}}&bookId={{bookId}}"><view class='wz_set'>{{item.section_name}}</view><image wx:if='{{item.isVip==1}}' src="../img/v.png"></image></navigator>
+      </view>
+    </view>
+</view>
+<view class='hot_foot'>
+  <view class='foot_left' bindtap='prevbook'>
+    <view>上一页</view>
+  </view>
+
+  <view class='foot_center'>
+     <picker class='picker' bindchange="bindPickerChange" value="{{index}}" range="{{select}}" bindchange="listenerPickerSelected"> 
+     <view>{{select[index]}}</view>
+  </picker>
+  </view>
+
+  <view class='foot_right' bindtap='nextbook'>
+    <view>下一页</view>
+  </view>
+</view>
+<!-- <view class='s_list'>
+        <view>1/259</view>
+        <view>2/259</view>
+         <view>3/259</view>
+         <view>3/259</view>
+         <view>3/259</view>
+         <view>3/259</view>
+         <view>3/259</view>
+         <view>3/259</view>   
+</view> -->
+  <picker bindchange="bindPickerChange" value="1" range="[1,2,3]" bindchange="listenerPickerSelected"> 
+  </picker>

@@ -1,0 +1,62 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='nl_c' bindtap='t_show'>
+  <scroll-view scroll-top="{{scrollTop}}">
+    <!-- 文章内容 -->
+     <view class='c_box' wx:for='{{c_list}}' wx:if='{{box_show}}'>
+      <view class='c_title'>
+        {{item.title}}
+      </view>
+      <view class='c_content'>
+        <template is="wxParse" data="{{wxParseData:cpContent.nodes}}" />
+      </view>
+      <view class='nl_gd' catchtap='gd' data-w_id='{{w_id}}' data-isVip='{{isVip}}' data-order='{{order}}'>
+        下一章
+      </view>
+    </view> 
+    <!-- 付费结构 -->
+    <view class='buy_str'  wx:if='{{!box_show}}'>
+      <view class='by_title'>──后续为付费章节需购买后方可阅读──</view>
+      <view class='f_info'>
+        <view class='info_block'>
+          <view class="buy_info">
+            <view style='min-width:84rpx'>购买：</view>
+            <view class='wz_set'>{{title}}</view>
+          </view>
+          <view class="buy_rate">
+            <view>价格：</view>
+            <view style='color:#219FFF;font-size:32rpx;'>12铜钱</view>
+          </view>
+            <checkbox-group bindchange="checkboxChange" class ='buy_auto'>
+            <label class="checkbox">
+              <view>是否开启自动购买</view>
+              <checkbox checked='{{!change}}' catchtap/>
+            </label>
+          </checkbox-group>
+        </view>
+      </view>
+      <button class='buy_next' data-charId='{{chapterIds}}' catchtap='buy_next'>购买下一章节</button>
+    </view>
+  </scroll-view>
+</view>
+<!-- TAB栏 -->
+<view class='hot_foot' style='{{show?"display:flex":"display:none"}}'>
+  <view class='foot_left' bindtap='tiao_shu'>
+    <view class='left_img'>
+      <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_bookshelf_2x$2fa42e84.png'></image>
+    </view>
+    <view>目录</view>
+  </view>
+
+  <view class='foot_center' bindtap='a_shu' data-bookId='{{books}}'>
+    <view>{{a_book}}</view>
+  </view>
+
+  <navigator class='foot_right' url="/pages/index/index" open-type='switchTab' hover-class="none">
+    <view>
+      <view class='left_img'>
+        <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_store_2x$844cb7e2.png'></image>
+      </view>
+      <view>我的书城</view>
+    </view>
+  </navigator>
+</view>

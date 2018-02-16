@@ -1,0 +1,44 @@
+<view>
+  <scroll-view class='jg_gd' scroll-y style="height:{{scrollHeight}}px" bindscrolltolower='scrolltolower'>
+    <view class='list'>
+      <view class='list_name'>
+        <view wx:for='{{listclass}}' data-index='{{index}}' style="color:{{index==currentItemId?'#1B88EE':'#858c96'}}" bindtap='new_list' data-name='{{item.major}}'>{{item.major}}</view>
+      </view>
+      <view class='list_p'>
+        <view class='con_list'>
+          <view class='link_content' wx:key='listbook' wx:for='{{listbook}}' data-id='{{item.bookId}}'>
+            <navigator class='link_nav' url="/pages/Novel/Novel?bookId={{item.bookId}}" hover-class="none">
+            <view class='content_left' style='background: url("../img/book.png") no-repeat center center/cover'>
+              <image src='{{item.cover}}'></image>
+            </view>
+            <view class='content_right'>
+              <view class='right_name'>{{item.title}}</view>
+              <view class='right_zuo'>{{item.author}}·{{item.minorCate}}</view>
+              <view class='right_f'>{{item.lastChapter}}</view>
+            </view>
+              </navigator>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </scroll-view>
+  <view class='hot_foot'>
+    <view class='foot_left' bindtap='tiao_shu'>
+      <view class='left_img'>
+        <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_bookshelf_2x$2fa42e84.png'></image>
+      </view>
+      <view>我的书架</view>
+    </view>
+    <navigator url="/pages/index/index"  open-type='switchTab' hover-class="navigator-hover">
+      <view class='foot_right'>
+        <view class='left_img'>
+          <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_store_2x$844cb7e2.png'></image>
+        </view>
+        <view>我的书城</view>
+
+      </view>
+    </navigator>
+
+  </view>
+</view>

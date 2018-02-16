@@ -1,0 +1,295 @@
+<!--index.wxml-->
+<view class='search' wx:if='{{bock_show==1}}'>
+  <view class='search_k'>
+    <icon type="search" size="13" color="#9da3ab" />
+    <input value="{{s_input}}" placeholder='搜索' bindinput='f_input' placeholder-style="color:##959ba2;font-size:30rpx;"></input>
+    <icon wx:if='{{clear_show==1}}' bindtap="clear_input" type="clear" size="13" color="#9da3ab" />
+  </view>
+  <view class='search_q' bindtap="bg_show" data-id='2'>取消</view>
+  <view class='search_list'>
+    <view wx:for="{{search_list}}" data-id='{{item.bookId}}'>
+      <navigator url="/pages/Novel/Novel?bookId={{item.bookId}}" hover-class="none">
+        <view>{{item.title}}</view>
+        <view style='color:#adb4c0;font-size:24rpx;margin-top:6rpx;'>{{item.author}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<view wx:if='{{bock_show==2}}'>
+  <scroll-view class='jg_gd' scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower='scrolltolower'>
+
+    <view class="jg_body">
+      <view class='jg_input'>
+        <view class='input_kuang'>
+          <icon type="search" size="11" color="#9da3ab" />
+          <input bindfocus='bg_show' data-id='1' placeholder='搜索' placeholder-style="color:#adb4c0;font-size:30rpx;" />
+        </view>
+      </view>
+      <!-- 猜你喜欢 -->
+      <view class='jg_link'>
+        <view class='link_top'>
+          <view class='top_x'>猜你喜欢</view>
+          <view class='top_h' bindtap="change_list">换一批</view>
+        </view>
+        <view class='con_box'>
+          <view class='link_content' wx:key='cailink' wx:for='{{cailink}}' book_id='{{item._id}}'>
+            <navigator class='link_nav' url="/pages/Novel/Novel?bookId={{item.bookId}}" hover-class="none">
+              <view class='content_left' style='background: url("../img/book.png") no-repeat center center/cover'>
+                <image src='{{item.cover}}'></image>
+              </view>
+              <view class='content_right'>
+                <view class='right_name'>{{item.title}}</view>
+                <view class='right_zuo'>{{item.author}}</view>
+                <view class='right_f'>{{item.majorCate}}</view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+      <!-- 热门推荐 -->
+      <view class='jg_hot'>
+        <view class='hot_top'>
+          <view class='top_r' bindtap='test'>热门推荐</view>
+          <view class='top_c'>
+            <navigator url="/pages/hot_tuis/tot_tui?title=1" hover-class="navigator-hover">查看全部</navigator>
+          </view>
+        </view>
+        <view class='hot_box'>
+          <view class='box_content' wx:for='{{hot_t}}'>
+            <navigator class='hot_nav' url="/pages/Novel/Novel?bookId={{item.bookId}}" hover-class="none">
+              <view class='content_img' style='background: url("../img/book.png") no-repeat center center/cover'>
+                <image src='{{item.cover}}'></image>
+              </view>
+              <view class='hot_name'>{{item.title}}</view>
+              <view class='hot_zuo'>{{item.author}}</view>
+              <view class='hot_f'>{{item.majorCate}}</view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+      <!-- 限时免费 -->
+      <view class='jg_xs'>
+        <view class='xs_top'>
+          <view class='top_r'>限时免费</view>
+          <view class='top_c'>
+            <navigator url="/pages/hot_tuis/tot_tui?title=2" hover-class="navigator-hover">查看全部</navigator>
+          </view>
+        </view>
+        <view class='xs_box'>
+          <view class='xs_content' wx:for='{{time_m}}' data-id='{{item.bookid}}'>
+            <navigator style='width:100%' class='m_nav' url="/pages/Novel/Novel?bookId={{item.bookId}}" hover-class="none">
+              <view class='content_left' style='background: url("../img/book.png") no-repeat center center/cover'>
+                <image src="{{item.cover}}"></image>
+              </view>
+              <view class='content_right' style='max-width:150rpx;'>
+                <view class='wz_set'>{{item.title}}</view>
+                <view>{{item.author}}</view>
+                <view>{{item.majorCate}}</view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+
+      <!-- 榜单 -->
+      <view class='jg_top'>
+        <view class='top_title'>榜单</view>
+        <view class='top_content'>
+          <view class='content_g' wx:for='{{bd_data}}'>
+            <navigator style='height:100%;width:100%;overflow:hidden' url="/pages/hot_tuis/tot_tui?title={{item.title}}" hover-class="navigator-hover">
+              <view class='g_f' style='background-image:url({{item.img}})'>
+              </view>
+            </navigator>
+
+          </view>
+        </view>
+      </view>
+      <!-- 分类排行 -->
+      <view class='jg_sort'>
+        <view class='sort_top'>
+          <view class='sort_x'>分类排行</view>
+          <view class='sort_h'>
+            <navigator url="/pages/leibie/leibie" hover-class="navigator-hover">查看全部</navigator>
+          </view>
+        </view>
+        <view class='sort_content'>
+          <view class='content_g'>
+            <navigator url="/pages/list_lei/list_lei?title=lingyi" hover-class='none'>
+              <view class='g_lei'>
+                <view class='g_top'>
+                  <view class='g_img'>
+                    <view class='g_img_one' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{xy_l[0].cover}}'></image>
+                    </view>
+                    <view class='g_img_two' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{xy_l[1].cover}}'></image>
+                    </view>
+                    <view class='g_img_tree' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{xy_l[2].cover}}'></image>
+                    </view>
+                  </view>
+                  <view class='g_title'>{{xy_l[0].majorCate}}</view>
+
+                </view>
+                <view class='g_footer'>
+                  <view class='footer_list'>
+                    <view class='list_n wz_set' wx:for='{{xy_l}}'>{{item.title}}</view>
+                  </view>
+                  <!-- <view class='foot_b wz_set'>
+                 {{xy_l[0].length}}本书籍
+              </view> -->
+                </view>
+              </view>
+            </navigator>
+
+          </view>
+          <view class='content_g'>
+            <navigator url="/pages/list_lei/list_lei?title=qingchun" hover-class='none'>
+              <view class='g_lei'>
+                <view class='g_top'>
+                  <view class='g_img'>
+                    <view class='g_img_one' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{qc_l[0].cover}}'></image>
+                    </view>
+                    <view class='g_img_two' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{qc_l[1].cover}}'></image>
+                    </view>
+                    <view class='g_img_tree' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{qc_l[2].cover}}'></image>
+                    </view>
+                  </view>
+                  <view class='g_title'>{{qc_l[0].majorCate}}</view>
+
+                </view>
+                <view class='g_footer'>
+                  <view class='footer_list'>
+                    <view class='list_n wz_set' wx:for='{{qc_l}}'>{{item.title}}</view>
+                  </view>
+                  <!-- <view class='foot_b wz_set'>
+                 {{xy_l[0].length}}本书籍
+              </view> -->
+                </view>
+              </view>
+            </navigator>
+          </view>
+          <view class='content_g'>
+            <navigator url="/pages/list_lei/list_lei?title=kehuan" hover-class='none'>
+              <view class='g_lei'>
+                <view class='g_top'>
+                  <view class='g_img'>
+                    <view class='g_img_one' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{kh_l[0].cover}}'></image>
+                    </view>
+                    <view class='g_img_two' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{kh_l[1].cover}}'></image>
+                    </view>
+                    <view class='g_img_tree' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{kh_l[2].cover}}'></image>
+                    </view>
+                  </view>
+                  <view class='g_title'>{{kh_l[0].majorCate}}</view>
+
+                </view>
+                <view class='g_footer'>
+                  <view class='footer_list'>
+                    <view class='list_n wz_set' wx:for='{{kh_l}}'>{{item.title}}</view>
+                  </view>
+                  <!-- <view class='foot_b wz_set'>
+                 {{xy_l[0].length}}本书籍
+              </view> -->
+                </view>
+              </view>
+            </navigator>
+          </view>
+          <view class='content_g'>
+            <navigator url="/pages/list_lei/list_lei?title=yanqing" hover-class='none'>
+              <view class='g_lei'>
+                <view class='g_top'>
+                  <view class='g_img'>
+                    <view class='g_img_one' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{yq_l[0].cover}}'></image>
+                    </view>
+                    <view class='g_img_two' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{yq_l[1].cover}}'></image>
+                    </view>
+                    <view class='g_img_tree' style='background: url("../img/book.png") no-repeat center center/cover'>
+                      <image src='{{yq_l[2].cover}}'></image>
+                    </view>
+                  </view>
+                  <view class='g_title'>{{yq_l[0].majorCate}}</view>
+
+                </view>
+                <view class='g_footer'>
+                  <view class='footer_list'>
+                    <view class='list_n wz_set' wx:for='{{yq_l}}'>{{item.title}}</view>
+                  </view>
+                  <!-- <view class='foot_b wz_set'>
+                 {{xy_l[0].length}}本书籍
+              </view> -->
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+      <view class='jq_edit'>
+        <view class='edit_top'>
+          <view class='edit_x'>玄幻精选</view>
+        </view>
+        <view class='edit_content' wx:for='{{xh_h}}'>
+          <view class='hot_box'>
+            <view class='box_content' wx:for='{{item[0]}}' wx:for-item="twodata">
+              <navigator style='width:100%' url="/pages/Novel/Novel?bookId={{twodata.bookId}}" hover-class="none">
+                <view class='content_img' style='background: url("../img/book.png") no-repeat center center/cover'>
+                  <image src="{{twodata.cover}}"></image>
+                </view>
+                <view class='hot_name'>{{twodata.title}}</view>
+                <view class='hot_zuo'>{{twodata.author}}</view>
+                <view class='hot_f wz_set'>{{twodata.lastChapter}}</view>
+              </navigator>
+            </view>
+          </view>
+          <view class='con_box'>
+            <view class='link_content' wx:for='{{item[1]}}' wx:for-item="treedata">
+              <navigator class='link_nav' url="/pages/Novel/Novel?bookId={{treedata.bookId}}" hover-class="none">
+                <view class='content_left' style='background: url("../img/book.png") no-repeat center center/cover'>
+                  <image src="{{treedata.cover}}"></image>
+                </view>
+                <view class='content_right'>
+                  <view class='right_name'>{{treedata.title}}</view>
+                  <view class='right_zuo'>{{treedata.author}}</view>
+                  <view class='right_f'>{{treedata.lastChapter}}</view>
+                </view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <!-- <view class="body-view">
+      <loading hidden="{{hidden}}" bindchange="loadingChange">
+            加载中...
+        </loading>
+     </view> -->
+  </scroll-view>
+</view>
+<!-- <view class='hot_foot'>
+  <view class='foot_left' bindtap='tiao_shu'>
+    <view class='left_img'>
+      <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_bookshelf_2x$2fa42e84.png'></image>
+    </view>
+    <view>我的书架</view>
+  </view>
+
+
+  <navigator url="/pages/chongzhi/chongzhi" hover-class="navigator-hover">
+    <view class='foot_right'>
+      <view class='left_img'>
+        <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_store_2x$844cb7e2.png'></image>
+      </view>
+      <view>充值</view>
+    </view>
+  </navigator>
+
+</view> -->

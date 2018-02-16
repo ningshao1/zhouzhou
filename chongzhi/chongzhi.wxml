@@ -1,0 +1,51 @@
+<view class='chong'>
+  <view class='yue'>
+    您的账户余额：32131铜钱
+  </view>
+  <view class='fangshi'>
+    <view class='zf_m'>
+      <view>请选择支付方式：</view>
+      <view>微信</view>
+    </view>
+    <view class='py_change'>
+      <view> 微信</view>
+    </view>
+  </view>
+  <view class='ts'>1元=100铜钱</view>
+  <view class='jg_xz'>
+    <view class='xz_block'>
+      <view class='block_info'  data-index="1"  style='{{border_num==1?"border-color:#219FFF;color:#219FFF":"border:1px solid rgba(0,0,0,.1)"}}' bindtap='change'>
+        <view>￥100</view>
+        <view style='{{border_num==1?"color:#219FFF":"color:#999"}}'>10000+5000铜钱</view>
+        <view style='{{border_num==1?"color:#219FFF":"color:#999"}}'>多送50</view>
+      </view>
+    </view>
+
+    <view class='xz_block'>
+      <view class='block_info' data-index="2" style='{{border_num==2?"border-color:#219FFF;color:#219FFF":"border:1px solid rgba(0,0,0,.1)"}}' bindtap='change'>
+        <view>￥50</view>
+        <view style='{{border_num==2?"color:#219FFF":"color:#999"}}'>5000+2000铜钱</view>
+        <view style='{{border_num==2?"color:#219FFF":"color:#999"}}'>多送20</view>
+      </view>
+    </view>
+    <view class='xz_block'>
+      <view class='block_info'  data-index="3"   style='{{border_num==3?"border-color:#219FFF;color:#219FFF":"border:1px solid rgba(0,0,0,.1)"}}' bindtap='change'>
+        <view>￥30</view>
+        <view style='{{border_num==3?"color:#219FFF":"color:#999"}}'>3000+1000铜钱</view>
+        <view style='{{border_num==3?"color:#219FFF":"color:#999"}}'>多送10</view>
+      </view>
+    </view>
+    <view class='xz_block'>
+      <view class='block_info'  data-index="4"  style='{{border_num==4?"border-color:#219FFF;color:#219FFF":"border:1px solid rgba(0,0,0,.1)"}}' bindtap='change'>
+        <view>￥100</view>
+        <view style='{{border_num==4?"color:#219FFF":"color:#999"}}'>1000+0铜钱</view>
+        <view style='{{border_num==4?"color:#219FFF":"color:#999"}}'>多送0</view>
+      </view>
+    </view>
+  </view>
+  <view class='chong_but'>
+    <view>
+      充值
+    </view>
+  </view>
+</view>

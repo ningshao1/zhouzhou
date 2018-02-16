@@ -1,0 +1,100 @@
+<view class='nl'>
+  <scroll-view scroll-y style="height:{{scrollHeight}}px" bindscrolltolower='scrolltolower'>
+
+    <view class='nl_top'>
+      <view class='top_img'>
+        <image src='{{d_cover}}'></image>
+      </view>
+      <view class='top_title'>
+        {{d_title}}
+      </view>
+      <view class='top_author'>
+        {{d_title}}
+      </view>
+      <view class='nl_js'>
+        {{d_longIntro}}
+      </view>
+      <!-- 目录按钮 -->
+      <view class='top_bottom'>
+        <navigator url="/pages/directory/directory?bookId={{bookId}}" hover-class="navigator-hover">
+          <view class='bottom_m'>
+            <view class='m_img'>
+              <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weReadPromot/detail/catalog_icon_2x$d9fa225b.png'></image>
+            </view>
+            <view class='bottom_title'>
+              目录
+            </view>
+          </view>
+        </navigator>
+        <navigator url="/pages/Novel_c/Novel_c?chapterId={{chapterId}}&bookId={{bookId}}" hover-class="navigator-hover">
+          <view class='bottom_m'>
+            <view class='m_img'>
+              <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weReadPromot/detail/adv_icon_wr_2x$5cfc37f5.png'></image>
+            </view>
+            <view class='bottom_title' style='color:#1b88ee'>
+              开始阅读
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 猜你喜欢 -->
+    <view class='nl_link'>
+      <view class='link_title wz_set'>
+        猜你喜欢
+      </view>
+      <view class='link_book'>
+        <view class='book_box' wx:for='{{cailink}}' data-id='{{item.bookId}}'>
+          <navigator class='link_nav' url="/pages/Novel/Novel?bookId={{item.bookId}}" hover-class="none">
+            <view class='book_img'>
+              <image src='{{item.cover}}'></image>
+            </view>
+            <view class='book_title'>
+              {{item.title}}</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class='nl_comment'>
+      <view class='dp_title'>
+        精彩点评 · {{ct_num}}
+      </view>
+      <view class='comment_content' wx:for="{{comment}}">
+        <view class='content_left'>
+          <image style='border-radius: 50%;' src='../img/user.png'></image>
+        </view>
+        <view class='content_right'>
+          <view class='right_top'>{{item.nickname}}
+          </view>
+          <view class='right_bottom'>
+            {{item.content}}
+          </view>
+          <view class='right_date'>{{item.updated}}</view>
+        </view>
+
+      </view>
+    </view>
+  </scroll-view>
+  <view class='hot_foot'>
+    <view class='foot_left' bindtap='tiao_shu'>
+      <view class='left_img'>
+        <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_bookshelf_2x$2fa42e84.png'></image>
+      </view>
+      <view>我的书架</view>
+    </view>
+
+    <navigator class='foot_center'  url="/pages/Novel_c/Novel_c?chapterId={{chapterId}}&bookId={{bookId}}" hover-class="navigator-hover">
+      <view>开始阅读</view>
+    </navigator>
+    <navigator class='foot_right' open-type='switchTab' url="/pages/index/index" hover-class="navigator-hover">
+      <view>
+        <view class='left_img'>
+          <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_store_2x$844cb7e2.png'></image>
+        </view>
+        <view>我的书城</view>
+      </view>
+    </navigator>
+
+
+  </view>
+</view>

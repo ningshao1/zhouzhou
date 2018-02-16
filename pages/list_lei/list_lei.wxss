@@ -1,0 +1,140 @@
+image {
+  width: 100%;
+  height: 100%;
+}
+
+.list {
+  margin-bottom: 110rpx;
+}
+
+.list_name {
+  margin-top: 16rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: #858c96;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.list_name view {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 16rpx 8rpx;
+}
+
+
+.link_content {
+  margin-bottom: 30rpx;
+  padding: 24rpx 32rpx;
+}
+.link_nav{
+    display: flex;
+  flex-direction: row;
+}
+
+.link_content image {
+  width: 100%;
+  height: 100%;
+}
+
+.link_content:active {
+  background: #f8f9fa;
+}
+
+.con_box {
+  margin-top: 40rpx;
+}
+
+.content_left {
+  background: skyblue;
+  height: 184rpx;
+  width: 128rpx;
+  overflow: hidden;
+}
+
+.content_left>img {
+  width: 100%;
+  height: 100%;
+}
+
+.content_right {
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  max-width: 600rpx;
+}
+
+.content_right .right_name {
+  font-size: 34rpx;
+  color: #212832;
+  margin-bottom: 4rpx;
+}
+
+.content_right .right_zuo {
+  font-size: 28rpx;
+  color: #49505a;
+  height: 44rpx;
+  line-height: 40rpx;
+  margin-bottom: 6rpx;
+}
+
+.content_right .right_f {
+  font-size: 28rpx;
+  color: #717882;
+}
+
+.hot_foot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 22rpx;
+  color: #49505a;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.hot_foot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 22rpx;
+  color: #49505a;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.hot_foot image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.hot_foot .foot_left {
+  /* background: red; */
+  height: 100%;
+  width: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hot_foot .foot_right {
+  /* background: blue; */
+  height: 100%;
+  width: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

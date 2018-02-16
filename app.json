@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/directory/directory",
+    "pages/bookrack/bookrack",
+    "pages/Novel_c/Novel_c",
+    "pages/Novel/Novel",
+    "pages/list_lei/list_lei",
+    "pages/leibie/leibie",
+    "pages/hot_tuis/tot_tui"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "坚果小说",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#49505a",
+    "borderStyle": "#000",
+    "selectedColor": "#49505a",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/img/index.png",
+        "selectedIconPath": "pages/img/index.png"
+      },
+      {
+        "pagePath": "pages/bookrack/bookrack",
+        "text": "我的书架",
+        "iconPath": "pages/img/shujia.png",
+        "selectedIconPath": "pages/img/shujia.png"
+      }
+    ]
+  }
+}

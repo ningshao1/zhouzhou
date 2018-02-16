@@ -1,0 +1,103 @@
+<view class='jg_ph'>
+<!-- 男生小说 -->
+<view class='jg_hot'>
+  <view class='hot_top'>
+    <view class='top_r'>男生小说</view>
+    <view class='top_c'>
+      <navigator url="/pages/list_lei/list_lei?title=man" hover-class="navigator-hover">查看全部</navigator>
+    </view>
+  </view>
+  <view class='hot_box'>
+    <view class='box_content' wx:for='{{man}}' data-id='{{item.bookId}}'>
+        <navigator url="/pages/Novel/Novel?bookId={{item.bookId}}" hover-class="none">
+      <view class='content_img' style='background: url("../img/book.png") no-repeat center center/cover'>
+        <image src='{{item.cover}}'></image>
+      </view>
+      <view class='hot_name wz_set'>{{item.title}}</view>
+      <view class='hot_zuo wz_set'>{{item.author}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<!-- 女生小说 -->
+<view class='jg_hot'>
+  <view class='hot_top'>
+    <view class='top_r'>女生小说</view>
+    <view class='top_c'>
+      <navigator url="/pages/list_lei/list_lei?title=woman" hover-class="navigator-hover">查看全部</navigator>
+    </view>
+  </view>
+  <view class='hot_box'>
+    <view class='box_content' wx:for='{{woman}}' data-id='{{item.bookId}}'>
+     <navigator url="/pages/Novel/Novel?bookId={{item.bookId}}" hover-class="none">
+      <view class='content_img' style='background: url("../img/book.png") no-repeat center center/cover'>
+        <image src='{{item.cover}}'></image>
+      </view>
+      <view class='hot_name wz_set'>{{item.title}}</view>
+      <view class='hot_zuo wz_set'>{{item.author}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<!-- 奇幻小说 -->
+<view class='jg_hot'>
+  <view class='hot_top'>
+    <view class='top_r'>西方科幻</view>
+    <view class='top_c'>
+      <navigator url="/pages/list_lei/list_lei?title=kehuan" hover-class="navigator-hover">查看全部</navigator>
+    </view>
+  </view>
+  <view class='hot_box'>
+    <view class='box_content' wx:for='{{kehuan}}' data-id='{{item.bookId}}'>
+     <navigator url="/pages/Novel/Novel?bookId={{item.bookId}}" hover-class="none">
+      <view class='content_img' style='background: url("../img/book.png") no-repeat center center/cover'>
+        <image src='{{item.cover}}'></image>
+      </view>
+      <view class='hot_name wz_set'>{{item.title}}</view>
+      <view class='hot_zuo wz_set'>{{item.author}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<!-- 青春 -->
+<view class='jg_hot'>
+  <view class='hot_top'>
+    <view class='top_r'>青春校园</view>
+    <view class='top_c'>
+      <navigator url="/pages/list_lei/list_lei?title=qingchun" hover-class="navigator-hover">查看全部</navigator>
+    </view>
+  </view>
+  <view class='hot_box'>
+    <view class='box_content' wx:for='{{qingchun}}' data-id='{{item.bookId}}'>
+     <navigator url="/pages/Novel/Novel?bookId={{item.bookId}}" hover-class="none">
+      <view class='content_img' style='background: url("../img/book.png") no-repeat center center/cover'>
+        <image src='{{item.cover}}'></image>
+      </view>
+      <view class='hot_name wz_set'>{{item.title}}</view>
+      <view class='hot_zuo wz_set'>{{item.author}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+</view>
+  <view class='hot_foot'>
+    <view class='foot_left' bindtap='tiao_shu'>
+      <view class='left_img'>
+        <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_bookshelf_2x$2fa42e84.png'></image>
+      </view>
+      <view>我的书架</view>
+    </view>
+   
+
+      <navigator url="/pages/index/index" open-type='switchTab' hover-class="navigator-hover">
+       <view class='foot_right'>
+        <view class='left_img'>
+          <image src='https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/weChatSearch/reader/icon_store_2x$844cb7e2.png'></image>
+        </view>
+        <view>我的书城</view>
+        </view>
+      </navigator>
+    
+  </view>

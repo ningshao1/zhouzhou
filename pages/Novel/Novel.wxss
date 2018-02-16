@@ -1,0 +1,255 @@
+image {
+  width: 100%;
+  height: 100%;
+}
+
+ .nl{
+   margin-bottom:110rpx;
+} 
+
+.wz_set {
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  word-wrap: normal;
+}
+
+.nl_top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nl_top .top_img {
+  width: 240rpx;
+  height: 346rpx;
+  margin-top: 48rpx;
+  margin-bottom: 28rpx;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-width: 1px;
+  border-radius: 0;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  overflow: hidden;
+}
+
+.nl_top .top_title {
+  font-size: 48rpx;
+  line-height: 64rpx;
+  color: #212832;
+  margin: 0 50rpx 14rpx;
+  text-align: center;
+}
+
+.nl_top .top_author {
+  font-size: 32rpx;
+  line-height: 44rpx;
+  color: #353c46;
+  text-align: center;
+  padding-bottom: 32rpx;
+  width: 100%;
+}
+
+.nl .nl_js {
+  font-size: 30rpx;
+  color: #353c46;
+  text-align: left;
+  overflow: hidden;
+  line-height: 48rpx;
+  background: #fff;
+  padding: 0 32rpx 24rpx;
+}
+
+/* 目录样式 */
+
+.top_bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding-bottom: 52rpx;
+}
+
+.top_bottom .m_img {
+  margin: 6rpx auto 0;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.top_bottom .bottom_title {
+  font-size: 24rpx;
+  line-height: 34rpx;
+  margin-top: 6rpx;
+  font-weight: 500;
+  color: #5d646e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  text-align: center;
+}
+
+/* 猜你喜欢 */
+
+.nl_link {
+  background: #eeeff1;
+  padding: 28rpx 0;
+}
+
+.link_title {
+  background: #fff;
+  height: 104rpx;
+  font-size: 30rpx;
+  color: #5d646e;
+  font-weight: 500;
+  border-style: solid;
+  border-color: #dee0e2;
+  border-width: 0 0 1px;
+  border-radius: 0;
+  line-height: 104rpx;
+  padding: 0 32rpx;
+}
+
+.link_book {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #fff;
+  padding: 32rpx;
+}
+
+.book_box {
+  width: 24%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: flex;
+  flex-direction: column;
+  /* justify-content:center; */
+  align-items: center;
+}
+
+.book_box .book_img {
+  width: 144rpx;
+  height: 206rpx;
+  margin-bottom: 16rpx;
+  overflow: hidden;
+}
+
+.book_title {
+  font-size: 24rpx;
+  color: #353c46;
+  line-height: 32rpx;
+  height: 64rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  text-align: center;
+}
+
+.nl_comment {
+  background: #dee0e2;
+}
+
+.dp_title {
+  height: 104rpx;
+  line-height: 104rpx;
+  padding: 0 32rpx;
+  background-color: #fff;
+  border-style: solid;
+  border-color: #dee0e2;
+  border-width: 0 0 1px;
+  border-radius: 0;
+  overflow: hidden;
+  font-size: 30rpx;
+  color: #5d646e;
+  font-weight: 500;
+}
+
+.comment_content {
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  padding: 28rpx 32rpx 32rpx;
+  margin-bottom: 24rpx;
+}
+
+.comment_content .content_left {
+  width: 72rpx;
+  height: 72rpx;
+  min-width: 72rpx;
+  margin-right: 24rpx;
+}
+
+.comment_content .content_right .right_top {
+  color: #5d646e;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  font-weight: 500;
+}
+
+.comment_content .content_right .right_bottom {
+  margin-top: 10rpx;
+  font-size: 34rpx;
+  line-height: 54rpx;
+}
+
+.content_right  .right_date {
+  margin-top: 28rpx;
+  font-size: 26rpx;
+  line-height: 32rpx;
+  color: #858c96;
+}
+
+.hot_foot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 22rpx;
+  color: #49505a;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.hot_foot image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.hot_foot .foot_left {
+  /* background: red; */
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hot_foot .foot_right {
+  /* background: blue; */
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.foot_center {
+  background: linear-gradient(to bottom,#219FFF,#55B5FF);
+  line-height:110rpx;
+  height: 100%;
+  width: 40%;
+  text-align: center;
+  color:#fff;
+  font-size: 30rpx;
+  overflow: hidden;
+}
